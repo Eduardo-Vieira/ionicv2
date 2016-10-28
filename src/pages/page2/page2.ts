@@ -12,7 +12,7 @@ export class Page2 {
   selectedItem: any;
   icons: string[];
   items: Array<{title: string, note: string, icon: string}>;
-  posts: any;
+  dados: string;
 
   // Dados do usuário
   Matricula: string;
@@ -31,7 +31,7 @@ export class Page2 {
     var url = 'http://daraa.manaus.am.gov.br/ponto/api/consultar/'+  this.Matricula +'/'+ this.Mes +'/'+this.Ano;
     this.http.get(url)
     .map(res => res.json())
-     .subscribe(data => {  localStorage.setItem('dados',data);
+    .subscribe(data => { this.dados = data;
     //   this.items = [];
     //   for (let i = 1; i < data.length; i++) {
     //     this.items.push({
@@ -41,7 +41,7 @@ export class Page2 {
     //     });
     //   };
      });
-    console.log(localStorage.getItem('dados'));
+    console.log(this.dados);
 
     // Let's populate this page with some filler content for funzies
     this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
