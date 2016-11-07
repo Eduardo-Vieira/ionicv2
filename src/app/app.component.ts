@@ -5,7 +5,8 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 import { Page1 } from '../pages/page1/page1';
 import { Page2 } from '../pages/page2/page2';
 import { Login } from '../pages/login/login';
-
+import { Ponto } from '../pages/ponto/ponto';
+import { Usuario } from '../pages/usuario/usuario';
 
 @Component({
   templateUrl: 'app.html'
@@ -22,8 +23,10 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
+      { title: 'Ponto', component: Ponto },
       { title: 'Page One', component: Page1 },
       { title: 'Page Two', component: Page2 },
+      { title: 'Usuário', component: Usuario },
       { title: 'Sair', component: Login }
     ];
 
@@ -35,10 +38,6 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
       Splashscreen.hide();
-
-      localStorage.setItem('Matricula','128986-1a');
-      localStorage.setItem('Mes','10');
-      localStorage.setItem('Ano','2016');
 
     });
   }
